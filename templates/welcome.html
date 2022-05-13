@@ -1,0 +1,14 @@
+<section class="jumbotron text-center" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-light bg-light justify-content-between" >
+        <a class="navbar-brand">Hello </a>
+        <form class="form-inline">
+            <a type="button" class="btn btn" href="/products">Products</a>
+            <a type="button" class="btn btn" href="/categories" sec:authorize="hasRole('ROLE_ADMIN')">Categories</a>
+            <a type="button" class="btn btn" href="/shopping-cart">Shopping cart</a>
+            <button type="button" class="btn btn" href="/logout">Log Out</button>
+        </form>
+    </nav>
+    <div class="container">
+        <h1 class="jumbotron-heading">SWEETS SHOP</h1>
+    </div>
+</section>

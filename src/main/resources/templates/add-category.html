@@ -1,0 +1,49 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <th:block>
+        <header>
+            <section class=" text-center" style="background-color: #ebb0ba">
+                <div class="container" id="naslov">
+                    <h1 class="jumbotron-heading" style="font-style: italic; letter-spacing: 15px; ">SWEETS SHOP</h1>
+                    <p style="font-style: italic; color:#202020;">You are what you eat, so eat SWEET!</p>
+
+                </div>
+            </section>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form action="/categories/add" method="POST">
+                        <input id="id" type="hidden" name="id" th:value="(${categories} != null ? ${categories.getId()} : '')">
+                        <div class="form-group">
+                            <label for="name">Category name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="name"
+                                   name="name"
+                                   th:value="(${categories} != null ? ${categories.getName()} : '')"
+                                   required
+                                   placeholder="Enter category name">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="description"
+                                   name="description"
+                                   th:value="(${categories} != null ? ${categories.getDescription()} : '')"
+                                   placeholder="Category">
+                        </div>
+
+
+
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                        <a type="button" class="btn btn-primary" href="/categories">Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </th:block>
+</div>

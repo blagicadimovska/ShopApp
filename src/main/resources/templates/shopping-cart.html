@@ -1,0 +1,44 @@
+<div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <header>
+        <section class=" text-center" style="background-color: #ebb0ba">
+            <div class="container" id="naslov">
+                <h1 class="jumbotron-heading" style="font-style: italic; letter-spacing: 15px; ">SWEETS SHOP</h1>
+                <p style="font-style: italic; color:#202020;">You are what you eat, so eat SWEET!</p>
+
+            </div>
+        </section>
+    </header>
+
+    <div th:if="${hasError}">
+        <h5 class="text-center text-danger" th:text="${error}"></h5>
+    </div>
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12" th:if="${products.size() > 0}">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr style="font-style:italic; color: #838383;text-transform: uppercase">
+                            <th scope="col">Product</th>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Category</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="t : ${products}">
+                            <td><img th:src="${t.getImageBase64()}"/></td>
+                            <td th:text="${t.getName()}"></td>
+                            <td th:text="${t.getPrice()}"></td>
+                            <td th:text="${t.getCategory() != null} ? ${t.getCategory().getName()} : 'No Category'"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div><a type="button" class="btn btn-primary" href="/products">Back</a></div>
+</div>

@@ -1,0 +1,114 @@
+<section class="jumbotron text-center" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-light bg-light justify-content-between" >
+        <a class="navbar-brand">Hello </a>
+        <form class="form-inline">
+            <a type="button" class="btn btn" href="/products">Products</a>
+            <a type="button" class="btn btn" href="/categories" >Categories</a>
+            <a type="button" class="btn btn" href="/shopping-cart"  sec:authorize="hasRole('ROLE_USER')">Shopping cart</a>
+            <a type="button" class="btn btn" href="/home">Log Out</a>
+        </form>
+    </nav>
+
+    <style>
+        header{
+            display: block;
+            color: #e83e8c;
+        }
+        .jumbotron{
+            background: url([[@{/images/download.png}]])
+            no-repeat center center fixed;;
+            text-align: center;
+            color: #e83e8c;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+
+            background-size: cover;
+            height: 400px;
+
+        }
+        #naslov {
+            font-family: Impact, Charcoal, sans-serif;
+            color: rgb(63, 63, 63);
+            background-color: rgba(75, 75, 75, 0.23);
+            padding: 5px;
+        }
+        #naslov p{
+            margin: 25px;
+        }
+        #poz{
+            color: purple;
+            font-style: italic;
+        }
+        .navbar-expand-md .navbar-nav .nav-link{
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        .nav-link:hover{
+            background: #dfe0e1;
+        }
+        #navid{
+            padding: 0px;
+        }
+        .active {
+            color: black;
+            font-weight: bold;
+        }
+        #head{
+        color: pink;
+        }
+
+    </style>
+
+    <header style="color #f8f9fa;">
+        <section class="jumbotron text-center" >
+            <div class="container" id="naslov" style="background-color: #ebb0ba">
+                <h1 class="jumbotron-heading" style="font-style: italic; letter-spacing: 15px; ">SWEETS SHOP</h1>
+                <p style="font-style: italic; color:#202020;">You are what you eat, so eat SWEET!</p>
+            </div>
+        </section>
+    </header>
+
+</div>
+    <div>
+        <img src="../templates/images/download.png" th:src="@{images/download.png}"/>
+    </div>
+
+
+    <footer class="text-black-50 bg-light page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="padding: 100px;">
+                    <h5>About</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <p class="mb-0">
+                        Candy, also called sweets (British English) or lollies (Australian English, New Zealand English),[a] is a confection that features sugar as a principal ingredient. The category, called sugar confectionery, encompasses any sweet confection, including chocolate, chewing gum, and sugar candy. Vegetables, fruit, or nuts which have been glazed and coated with sugar are said to be candied.
+
+                        Physically, candy is characterized by the use of a significant amount of sugar or sugar substitutes. Unlike a cake or loaf of bread that would be shared among many people, candies are usually made in smaller pieces. However, the definition of candy also depends upon how people treat the food. Unlike sweet pastries served for a dessert course at the end of a meal, candies are normally eaten casually, often with the fingers, as a snack between meals. Each culture has its own ideas of what constitutes candy rather than dessert. The same food may be a candy in one culture and a dessert in another.[2]
+                    </p>
+                </div>
+
+
+
+                <div class="col-lg-12 text-center" style="padding: 100px;" >
+                    <h5>Contact</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-home mr-2"></i> Company</li>
+                        <li><i class="fa fa-envelope mr-2"></i> email@example.com</li>
+                        <li><i class="fa fa-phone mr-2"></i> + 33 1678 54 7 879</li>
+                        <li><i class="fa fa-print mr-2"></i> + 33 1678 54 7 879</li>
+                    </ul>
+                    <div></div>
+                </div>
+                <div class="col-12 copyright mt-3">
+                    <p class="float-left">
+                        <a href="#">Back to top</a>
+                    </p>
+                    <p class="text-right text-muted">created with <i class="fa fa-heart"></i> by <a
+                            href="https://t-php.fr/43-theme-ecommerce-bootstrap-4.html"><i>t-php</i></a> |
+                        <span>v. 1.0</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>

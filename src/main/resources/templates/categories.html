@@ -1,0 +1,52 @@
+<div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <header>
+        <section class=" text-center" style="background-color: #ebb0ba">
+            <div class="container" id="naslov">
+                <h1 class="jumbotron-heading" style="font-style: italic; letter-spacing: 15px; ">SWEETS SHOP</h1>
+                <p style="font-style: italic; color:#202020;">You are what you eat, so eat SWEET!</p>
+
+            </div>
+        </section>
+    </header>
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12" th:if="${categories.size() > 0}">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">category name</th>
+                            <th scope="col">Description</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="categories : ${categories}" class="categories">
+                            <td th:text="${categories.getName()}"></td>
+                            <td th:text="${categories.getDescription()}"></td>
+
+
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="/categories/add-form" class="btn btn-block btn-dark add-category-btn" sec:authorize="hasRole('ROLE_ADMIN')">
+                            Add new Category
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/admin" class="btn btn-block btn-dark add-category-btn">
+            Back
+        </a>
+    </div>
+</div>
+
